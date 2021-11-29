@@ -771,15 +771,17 @@ def strip_string(value, max_length=None):
 
     length = len(value)
 
-    if length > max_length:
-        return AnnotatedValue(
-            value=value[: max_length - 3] + u"...",
-            metadata={
-                "len": length,
-                "rem": [["!limit", "x", max_length - 3, max_length]],
-            },
-        )
     return value
+
+    # if length > max_length:
+    #    return AnnotatedValue(
+    #        value=value[: max_length - 3] + u"...",
+    #        metadata={
+    #            "len": length,
+    #            "rem": [["!limit", "x", max_length - 3, max_length]],
+    #        },
+    #    )
+    # return value
 
 
 def _is_contextvars_broken():
